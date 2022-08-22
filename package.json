@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
+    "@vercel/node": "^2.5.8",
+    "nuxt": "3.0.0-rc.8"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "node-telegram-login": "^2.0.0"
+  }
+}
