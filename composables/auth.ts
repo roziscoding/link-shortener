@@ -2,7 +2,7 @@ import { TelegramLoginPayload } from 'node-telegram-login'
 
 export const useToken = () => useState<string>('token', () => localStorage.getItem('token') || '')
 export const useUser = () =>
-  useState<TelegramLoginPayload>('userData', () => {
+  useState<Required<TelegramLoginPayload>>('userData', () => {
     const json = localStorage.getItem('userData')
 
     if (!json)
