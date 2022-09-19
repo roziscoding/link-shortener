@@ -9,5 +9,5 @@ export default defineNuxtConfig({
   runtimeConfig: {
     telegramToken: ''
   },
-  ssr: false
+  ssr: false,
 })

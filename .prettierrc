@@ -1,0 +1,7 @@
+{
+  "semi": false,
+  "vueIndentScriptAndStyle": true,
+  "trailingComma": "none",
+  "singleQuote": true,
+  "printWidth": 120
+}

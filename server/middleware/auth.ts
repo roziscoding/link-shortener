@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-const openUrls = ['/api/login', '/login/token', '/login', '/home']
+const openUrls = ['/api/login', '/login/token', '/login', '/']
 
 export default defineEventHandler(async (event) => {
   if (!openUrls.some((url) => event.req.originalUrl?.includes(url || ''))) {
