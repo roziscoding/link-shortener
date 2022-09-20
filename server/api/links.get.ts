@@ -1,3 +1,5 @@
-export default defineEventHandler((event) => {
-  return ['Deu certo']
+import { getPrisma } from '../prisma'
+
+export default defineEventHandler(() => {
+  return getPrisma().then((prisma) => prisma.link.findMany())
 })

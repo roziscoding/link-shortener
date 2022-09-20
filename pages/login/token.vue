@@ -17,6 +17,6 @@
     localStorage.setItem('token', authResponse.token)
     localStorage.setItem('userData', JSON.stringify(authResponse.data))
 
-    await navigateTo({ path: '/' })
+    await navigateTo('/admin')
   }
 </script>

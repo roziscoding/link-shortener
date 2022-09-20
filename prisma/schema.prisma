@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Link {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  shortcode String  @unique
+  url       String
+  name      String
+  public    Boolean @default(false)
+  hits      Hit[]
+}
+
+enum DeviceType {
+  Mobile
+  Desktop
+}
+
+model Hit {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  shortcode  String
+  date       DateTime   @default(now())
+  country    String
+  deviceType DeviceType
+  link       Link       @relation(fields: [shortcode], references: [shortcode])
+}
