@@ -5,7 +5,7 @@
     </template>
     <link-card-content :link="link" />
     <template #action>
-      <link-card-action :link="link" />
+      <link-card-action @refresh="emit('refresh')" :link="link" />
     </template>
   </n-card>
 </template>
@@ -23,6 +23,7 @@
     link: Link
   }
 
+  const emit = defineEmits(['refresh'])
   defineProps<Props>()
   definePreviews<Props>({
     private: {

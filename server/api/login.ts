@@ -9,17 +9,13 @@ export default defineEventHandler(async (event) => {
   const auth = new TelegramLogin(telegramToken)
 
   if (!auth.checkLoginData(body)) {
-    return sendError(
-      event,
-      createError({ statusCode: 401, statusMessage: 'Unauthorized' }),
-      false
-    )
+    return sendError(event, createError({ statusCode: 401, statusMessage: 'Unauthorized' }), false)
   }
 
   const token = jwt.sign(body, telegramToken, {
     algorithm: 'HS256',
     audience: 'link-shortener',
-    expiresIn: '1h',
+    expiresIn: '1day',
     issuer: 'telegram',
     subject: body.id.toString()
   })
